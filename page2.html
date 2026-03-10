@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+}
+
+/* main text */
+
+h1{
+font-size:40px;
+animation:fade 2s;
+}
+
+/* second text */
+
+p{
+font-size:22px;
+margin-top:15px;
+}
+
+/* fade animation */
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* hearts */
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px);}
+100%{transform:translateY(100vh);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Ap na kya bolu ab meiiiiii aisa karogeeeeeee ap... 👀</h1>
+
+<p>Jab kuch kehne ko hota hai ke h diya jata hai aur ap tohh ufffooooo
+    aur han miss karti ho puchne 
+    <br>
+    ki jarurt naiiiiiiiiiii hai smjhheeeee 
+    smjh jayaaa karo appp... bs yahi kehna tha kyuki itna sa krne mei 1 ghante se jada lag gaya
+
+</p>
+
+<!-- song -->
+
+<audio autoplay loop>
+<source src="DooronDooron.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function heart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+
+setTimeout(()=>{h.remove()},5000);
+}
+
+setInterval(heart,500);
+
+</script>
+
+</body>
+</html>

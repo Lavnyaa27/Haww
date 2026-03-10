@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-family:Arial;
+text-align:center;
+
+/* yaha apni image lagana */
+background-image:url("yourimage.jpg");
+background-size:cover;
+background-position:center;
+}
+
+/* main text */
+
+h1{
+color:white;
+font-size:40px;
+animation:fade 2s ease-in-out;
+}
+
+/* link */
+
+#next{
+display:none;
+margin-top:20px;
+font-size:22px;
+color:blue;
+cursor:pointer;
+animation:blink 1s infinite;
+}
+
+/* blinking animation */
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
+
+/* fade animation */
+
+@keyframes fade{
+0%{opacity:0;}
+100%{opacity:1;}
+}
+
+/* hearts */
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px);}
+100%{transform:translateY(100vh);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 style="color:black; text-shadow:0 0 10px pink;">
+Haawwwwwwwwwwwwwwwww...
+</h1>
+
+<div id="next">Suniyeeeeee</div>
+
+<!-- music -->
+
+<audio autoplay loop>
+<source src="song1.mp3">
+</audio>
+
+<script>
+
+/* show link after 3 sec */
+
+setTimeout(function(){
+document.getElementById("next").style.display="block";
+},3000);
+
+document.getElementById("next").onclick=function(){
+window.location.href="page2.html";
+};
+
+/* falling hearts */
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),5000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url(https://w0.peakpx.com/wallpaper/429/798/HD-wallpaper-premium-vector-aesthetic-cute-pastel-pink-backdrop-illustration-perfect-for-backdrop-postcard-background-banner-for-your-design.jpg) center/cover;
+font-family:monospace;
+color:white;
+text-align:center;
+}
+
+.box{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<audio autoplay loop>
+  <source src=".mp3" type="audio/mpeg">
+</audio>
+
+<script>
+sessionStorage.setItem("musicPlaying","true");
+</script>
+
+</body>
+</html>
